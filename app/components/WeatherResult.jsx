@@ -10,3 +10,4 @@ var WeatherResult = ({temp, location}) => {
 	};
 
 module.exports = WeatherResult; 
+
