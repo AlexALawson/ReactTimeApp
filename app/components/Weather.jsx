@@ -29,7 +29,7 @@ var Weather = React.createClass({
 		}, function (e){
 			that.setState({
 				isLoading: false,
-				errorMessage: e.message
+				errorMessage: "Cannot find info for that location."
 			});
 		});
 	},
@@ -50,11 +50,11 @@ var Weather = React.createClass({
 			this.handleSearch(location);
 			window.location.hash = '#/';
 		}
-	}
+	},
 	render: function() {
 	var {isLoading, location, temp, errorMessage} = this.state;
 
-	function renderMessage(){
+	function (){
 		if(isLoading){
 			return <h3 className="text-center">Fetching Weather...</h3>;
 		} else if (temp && location) {
