@@ -1,4 +1,4 @@
-var React = require('react'); 
+var React = require('react');
 
 var WeatherForm = React.createClass({
 	onFormSubmit: function(e){
@@ -7,8 +7,8 @@ var WeatherForm = React.createClass({
 		var location = this.refs.location.value;
 
 		if(location.length > 0) {
-			this.refs.location.value= ''; 
-			this.props.onSearch(location); 
+			this.refs.location.value= '';
+			this.props.onSearch(location);
 		}
 	},
 	render: function() {
@@ -23,4 +23,4 @@ var WeatherForm = React.createClass({
 	}
 });
 
-module.exports = WeatherForm; 
+module.exports = WeatherForm;

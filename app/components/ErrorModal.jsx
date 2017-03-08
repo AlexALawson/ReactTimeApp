@@ -7,19 +7,19 @@ var ErrorModal = React.createClass({
 		};
 	},
 	propTypes: {
-		title: React.PropTypes.string, 
+		title: React.PropTypes.string,
 		message: React.PropTypes.string.isRequired
 	},
 	componentDidMount: function () {
 		var modal = new Foundation.Reveal($('#error-modal'));
-		modal.open(); 
+		modal.open();
 	},
  render: function() {
- 	var {title, message} = this.props; 
+ 	var {title, message} = this.props;
  return (
     <div id="error-modal" className="reveal tiny text-center" data-reveal="">
     	<h4>{title}</h4>
-    	<p>{message}</p> 	
+    	<p>{message}</p>
     	<p>
     	<button className="button hollow" data-close="">
     		Okay
@@ -30,6 +30,6 @@ var ErrorModal = React.createClass({
  	)
 
  }
-}); 
+});
 
-module.exports = ErrorModal; 
+module.exports = ErrorModal;

@@ -1,14 +1,19 @@
-var React = require('react'); 
-var {Link, IndexLink} = require('react-router'); 
+var React = require('react');
+var {Link, IndexLink} = require('react-router');
 
 
 
 var Nav = React.createClass({
 	onSearch: function(e){
-		e.preventDefault(); 
+		e.preventDefault();
 
 		var location = this.refs.search.value;
-		alert(location)
+		var encodedLocation = encodeURIComponent(location);
+		if(location.length > 0) {
+			this.refs.search.value = '';
+			window.location.hash = '#/?location=' + encodedLocation;
+
+		}
 	},
 	render: function() {
 		return (
@@ -26,7 +31,7 @@ var Nav = React.createClass({
 							<Link to='/examples' activeClassName='active' activeStyle={{fontWeight: 'bold'}}>Examples</Link>
 						</li>
 					</ul>
-				</div> 
+				</div>
 				<div className="top-bar-right">
 					<form onSubmit={this.onSearch}>
 						<ul className="menu">
@@ -40,11 +45,10 @@ var Nav = React.createClass({
 					</form>
 				</div>
 			</div>
-		
+
 		);
 	}
 })
 
 
-module.exports = Nav; 
-
+module.exports = Nav;
