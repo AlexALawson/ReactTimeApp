@@ -29,7 +29,7 @@ var Weather = React.createClass({
 		}, function (e){
 			that.setState({
 				isLoading: false,
-				errorMessage: "Cannot find info for that location."
+				errorMessage: "cannot get weather for this location"
 			});
 		});
 	},
@@ -43,8 +43,8 @@ var Weather = React.createClass({
 		}
 	},
 
-	componentWillReceiveProps: function(){
-		var location = this.props.location.query.location;
+	componentWillReceiveProps: function(newProps){
+		var location = newProps.location.query.location;
 
 		if(location && location.length > 0){
 			this.handleSearch(location);
